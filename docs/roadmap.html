@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>SAFESATOSHIMOON</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div id="pageloader" class="pageloader is-left-to-right is-theme"></div>
+    <div id="infraloader" class="infraloader is-active"></div>    
+    <div class="roadmap-wrapper">
+        <!-- Landing page Hero -->
+        <section class="hero is-medium">
+            <div class="hero-head">
+    
+                <!-- Cloned navbar -->
+                <!-- Cloned navbar that comes in on scroll -->
+                <nav x-data="initNavbar()"  x-on:scroll.window="scroll()" id="navbar-clone" class="navbar is-fixed is-dark" :class="{
+                        'is-active': scrolled,
+                        '': !scrolled
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img class="Static" src="Graphics/2.png" alt="">
+                                <span class="brand-name">SAFESATOSHIMOON</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="cloneNavbarMenu" class="navbar-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="index.html" target="_blank">Home</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://bscscan.com/token/0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Token</a>
+                                </div>
+
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://charts.bogged.finance/?token=0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Chart</a>
+                                </div>
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="Whitepaper.html">Whitepaper</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://twitter.com/SatoshiSafe" target="_blank">Twitter</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://instagram.com/safesatoshimoonofficial" target="_blank">Instagram</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://t.me/SAFESATOSHI_BSC" target="_blank">
+                                        <img class="telegram" src="img/logo/telegram.svg" alt="">
+                                        Telegram
+                                    </a>
+                                </div>
+                                <!-- Sign up -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="disclaimer.html">Disclaimer</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Cloned navbar -->
+                <!-- Static navbar -->
+                <!-- Static navbar -->
+                <nav x-data="initNavbar()" class="navbar is-light" :class="{
+                        'is-dark-mobile': mobileOpen,
+                        '': !mobileOpen
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img class="static" src="Graphics/2.png" alt="">
+                                <span class="brand-name">SAFESATOSHIMOON</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="navbarMenu" class="navbar-menu light-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="index.html" target="_blank">Home</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://bscscan.com/token/0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Token</a>
+                                </div>
+   
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://charts.bogged.finance/?token=0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Chart</a>
+                                </div>
+
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="Whitepaper.html">Whitepaper</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://twitter.com/SatoshiSafe" target="_blank">Twitter</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://instagram.com/safesatoshimoonofficial" target="_blank">Instagram</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://t.me/SAFESATOSHI_BSC" target="_blank">
+                                        <img class="telegram" src="img/logo/telegram.svg" alt="">
+                                        Telegram
+                                    </a>
+                                </div>
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="disclaimer.html">Disclaimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Static navbar -->
+            </div>
+    
+            <div class="hero-body has-text-centered">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="roadmap-image">
+                            <img src="img/illustrations/world.svg">
+                        </div>
+                        <h1 class="title is-2 is-light is-semibold is-spaced main-title">2021 Roadmap</h1>
+                        <h2 class="subtitle is-5 is-light is-thin">
+                            
+                        </h2>
+                        <!-- CTA -->
+                        <p>
+                            <a href="#roadmap" class="button k-button k-primary raised has-gradient is-fat is-bold">
+                                <span class="text">More details</span>
+                                <span class="front-gradient"></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section x-data="initRoadmap()" x-init="setupRoadmap()" id="roadmap" class="main-timeline">
+            <ul>
+                <li>
+                    <div>
+                        <span class="item-title">Our Foundation</span>
+                        <time></time> 
+                        <span class="item-content">
+                            The first priority of the community is establishing a strong foundation through the creation of a website and social media accounts and the use of forums such as Reddit, Discord, and Telegram.
+                            <br>
+                        </span>
+                        
+                        <span class="item-content">
+                            <br>
+                            We are showcasing the strength of our community by applying for CoinGecko and CoinMarketCap listings, as well as developing a marketing strategy.
+                         </span>
+                         <span class="item-content">
+                            <br>
+                            We are pursuing advertising and promotions through partnership with YouTubers, Twitch streamers, and various other avenues.
+                         </span>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span class="item-title">As We Grow</span>
+                        <time></time> 
+                        <span class="item-content">
+                            Our work is never done—we will constantly update our website and continue to take feedback from the community to help us improve.
+                        </span>
+                        <span class="item-content">
+                            <br>
+                            Applying for listings on Whitebit, Bitmart, and other major exchanges.
+                        </span>
+                        <span class="item-content">
+                            <br>
+                            Creating and developing our own NFT Marketplace while finding ways to give back to the community and support charities that align with our community vision.
+                        </span>
+                    </div>
+                </li>
+
+
+
+
+            </ul>
+        </section>
+    
+    </div>
+
+    <div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"><a href="javascript:" :class="{
+        'visible': scrolled,
+        '': !scrolled
+    }"></a></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./js/bundle.js"></script>
+
+</body>
+
+</html>

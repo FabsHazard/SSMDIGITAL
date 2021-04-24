@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link rel="stylesheet" href="base.min.css"/>
+<link rel="stylesheet" href="fancy.min.css"/>
+<link rel="stylesheet" href="main.css"/>
+
+<link rel="icon" type="image/png" href="img/favicon.png" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script src="compatibility.min.js"></script>
+<script src="theViewer.min.js"></script>
+<script>
+try{
+theViewer.defaultViewer = new theViewer.Viewer({});
+}catch(e){}
+</script>
+<title></title>
+</head>
+<body>
+
+
+
+    <div id="pageloader" class="pageloader is-left-to-right is-theme"></div>
+    <div id="infraloader" class="infraloader is-active"></div>    
+    <div class="roadmap-wrapper">
+        <!-- Landing page Hero -->
+        <section class="hero is-medium">
+            <div class="hero-head">
+    
+                <!-- Cloned navbar -->
+                <!-- Cloned navbar that comes in on scroll -->
+                <nav x-data="initNavbar()"  x-on:scroll.window="scroll()" id="navbar-clone" class="navbar is-fixed is-dark" :class="{
+                        'is-active': scrolled,
+                        '': !scrolled
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img class="Static" src="Graphics/2.png" alt="">
+                                <span class="brand-name">SAFESATOSHIMOON</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="cloneNavbarMenu" class="navbar-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="index.html" target="_blank">Home</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://bscscan.com/token/0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Token</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://charts.bogged.finance/?token=0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Chart</a>
+                                </div>
+ 
+
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="roadmap.html">Roadmap</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://twitter.com/SatoshiSafe" target="_blank">Twitter</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://instagram.com/safesatoshimoonofficial" target="_blank">Instagram</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://t.me/SAFESATOSHI_BSC" target="_blank">
+                                        <img class="telegram" src="img/logo/telegram.svg" alt="">
+                                        Telegram
+                                    </a>
+                                </div>
+                                <!-- Sign up -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="disclaimer.html">Disclaimer</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Cloned navbar -->
+                <!-- Static navbar -->
+                <!-- Static navbar -->
+                <nav x-data="initNavbar()" class="navbar is-light" :class="{
+                        'is-dark-mobile': mobileOpen,
+                        '': !mobileOpen
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img class="static" src="Graphics/2.png" alt="">
+                                <span class="brand-name">SAFESATOSHIMOON</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="navbarMenu" class="navbar-menu light-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="index.html" target="_blank">Home</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://bscscan.com/token/0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Token</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://charts.bogged.finance/?token=0xB67d3576c3197826B656c254483E3C20f8ba93FD" target="_blank">Chart</a>
+                                </div>
+   
+
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="roadmap.html">Roadmap</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://twitter.com/SatoshiSafe" target="_blank">Twitter</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://instagram.com/safesatoshimoonofficial" target="_blank">Instagram</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="https://t.me/SAFESATOSHI_BSC" target="_blank">
+                                        <img class="telegram" src="img/logo/telegram.svg" alt="">
+                                        Telegram
+                                    </a>
+                                </div>
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="disclaimer.html">Disclaimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Static navbar -->
+            </div>
+    
+            
+        </section>
+
+        
+
+
+    </div>
+
+    <div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"><a href="javascript:" :class="{
+        'visible': scrolled,
+        '': !scrolled
+    }"></a></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./js/bundle.js"></script>
+
+
+
+
+
+
+
+<div id="sidebar">
+<div id="outline">
+</div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w0 h0" alt="" src="bg1.png"/><div class="t m0 x1 h1 y1 ff1 fs0 fc0 sc0 ls0 ws0">WHITEP<span class="_ _0"></span>APER</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x2 y2 w1 h2" alt="" src="bg2.png"/><div class="t m0 x3 h1 y3 ff1 fs0 fc1 sc0 ls0 ws0">ABSTRACT </div><div class="t m0 x3 h3 y4 ff2 fs1 fc1 sc0 ls0 ws1">W<span class="_ _1"></span>e ar<span class="_ _2"></span>e entering a digital r<span class="_ _2"></span>evolution </div><div class="t m0 x3 h3 y5 ff2 fs1 fc1 sc0 ls0 ws2">acr<span class="_ _2"></span>oss the world spanning fr<span class="_ _2"></span>om social </div><div class="t m0 x3 h3 y6 ff2 fs1 fc1 sc0 ls0 ws3">media to the workplace and now<span class="_ _1"></span>, to </div><div class="t m0 x3 h3 y7 ff2 fs1 fc1 sc0 ls0 ws4">curr<span class="_ _2"></span>encies. Cryptocurr<span class="_ _2"></span>ency is gaining </div><div class="t m0 x3 h3 y8 ff2 fs1 fc1 sc0 ls0 ws5">in popularity at an astonishing rate for </div><div class="t m0 x3 h3 y9 ff2 fs1 fc1 sc0 ls0 ws6">quite a few r<span class="_ _2"></span>easons, including scar<span class="_ _2"></span>city<span class="_ _3"></span>, </div><div class="t m0 x3 h3 ya ff2 fs1 fc1 sc0 ls0 ws7">divisibility<span class="_ _3"></span>, utility<span class="_ _3"></span>, transportability<span class="_ _3"></span>, </div><div class="t m0 x3 h3 yb ff2 fs1 fc1 sc0 ls0 ws0">durability<span class="_ _3"></span>, and counterfeitability<span class="_ _3"></span>.</div><div class="t m0 x3 h4 yc ff1 fs2 fc2 sc0 ls0 ws8">The distribution of wealth is </div><div class="t m0 x3 h4 yd ff1 fs2 fc2 sc0 ls0 ws9">being shifted fr<span class="_ _2"></span>om the hands </div><div class="t m0 x3 h4 ye ff1 fs2 fc2 sc0 ls0 wsa">of W<span class="_ _1"></span>all Street to smaller crypto </div><div class="t m0 x3 h4 yf ff1 fs2 fc2 sc0 ls0 ws0">communities.</div><div class="t m0 x3 h3 y10 ff2 fs1 fc1 sc0 ls0 wsb">Ther<span class="_ _2"></span>e is now another version of </div><div class="t m0 x3 h3 y11 ff2 fs1 fc1 sc0 ls0 wsc">cryptocurr<span class="_ _2"></span>ency that is gaining </div><div class="t m0 x3 h3 y12 ff2 fs1 fc1 sc0 ls0 wsd">popularity: T<span class="_ _4"></span>okens. T<span class="_ _4"></span>okens ar<span class="_ _2"></span>e </div><div class="t m0 x3 h3 y13 ff2 fs1 fc1 sc0 ls0 wse">cr<span class="_ _2"></span>eated on existing blockchains. In </div><div class="t m0 x3 h3 y14 ff2 fs1 fc1 sc0 ls0 wsf">our case we use Binance Smart Chain, </div><div class="t m0 x3 h3 y15 ff2 fs1 fc1 sc0 ls0 ws10">which can cr<span class="_ _2"></span>eate new ways to gain </div><div class="t m0 x3 h3 y16 ff2 fs1 fc1 sc0 ls0 ws11">access to pr<span class="_ _2"></span>omising opportunities in </div><div class="t m0 x3 h3 y17 ff2 fs1 fc1 sc0 ls0 ws0">a permissionless fashion.</div><div class="t m0 x4 h4 y18 ff1 fs2 fc1 sc0 ls0 ws0">2</div><div class="t m0 x5 h1 y3 ff1 fs0 fc1 sc0 ls0 ws0">TOKENOMICS</div><div class="t m0 x5 h3 y4 ff2 fs1 fc1 sc0 ls0 ws12">One r<span class="_ _2"></span>eason why T<span class="_ _4"></span>okens ar<span class="_ _2"></span>e gaining </div><div class="t m0 x5 h3 y5 ff2 fs1 fc1 sc0 ls0 ws13">popularity is because of the scar<span class="_ _2"></span>city </div><div class="t m0 x5 h3 y6 ff2 fs1 fc1 sc0 ls0 ws0">factor<span class="_ _5"></span>, or T<span class="_ _4"></span>okenomics. </div><div class="t m0 x5 h4 y19 ff1 fs2 fc2 sc0 ls0 ws14">“The networks r<span class="_ _2"></span>ewar<span class="_ _2"></span>d </div><div class="t m0 x5 h4 y1a ff1 fs2 fc2 sc0 ls0 ws15">validators, or miners, with </div><div class="t m0 x5 h4 y1b ff1 fs2 fc2 sc0 ls0 ws16">newly minted coins; others sell </div><div class="t m0 x5 h4 y1c ff1 fs2 fc2 sc0 ls0 ws17">a portion of the token supply to </div><div class="t m0 x5 h4 y1d ff1 fs2 fc2 sc0 ls0 ws18">pr<span class="_ _2"></span>ospective users in an initial </div><div class="t m0 x5 h5 y1e ff3 fs2 fc2 sc0 ls0 ws0">coin oering.” </div><div class="t m0 x5 h3 y1f ff2 fs1 fc1 sc0 ls0 ws19">In our case, the supply started with </div><div class="t m0 x5 h3 y20 ff2 fs1 fc1 sc0 ls0 ws1a">1,000,000,000,000,000, but 50% </div><div class="t m0 x5 h3 y21 ff2 fs1 fc1 sc0 ls0 ws1b">was bur<span class="_ _6"></span>ned by the developer on </div><div class="t m0 x5 h3 y22 ff2 fs1 fc1 sc0 ls0 ws1c">r<span class="_ _2"></span>oll out day<span class="_ _3"></span>.  As time progr<span class="_ _2"></span>esses, </div><div class="t m0 x5 h3 y23 ff2 fs1 fc1 sc0 ls0 ws1d">SafeSatoshiMoon tokens will continue </div><div class="t m0 x5 h3 y24 ff2 fs1 fc1 sc0 ls0 ws1e">to be bur<span class="_ _6"></span>ned at a rate of 10% per </div><div class="t m0 x5 h3 y25 ff2 fs1 fc1 sc0 ls0 ws1f">transaction. 3% of each transaction </div><div class="t m0 x5 h3 y26 ff2 fs1 fc1 sc0 ls0 ws20">is r<span class="_ _2"></span>edistributed among holders as a </div><div class="t m0 x5 h3 y27 ff2 fs1 fc1 sc0 ls0 ws21">r<span class="_ _2"></span>ewar<span class="_ _2"></span>d for holding. The other 7% will </div><div class="t m0 x5 h3 y28 ff2 fs1 fc1 sc0 ls0 ws22">be auto locked in a Pancake Swap </div><div class="t m0 x5 h3 y29 ff2 fs1 fc1 sc0 ls0 ws23">Liquidity Pool. With this pr<span class="_ _2"></span>ocess in </div><div class="t m0 x5 h3 y2a ff2 fs1 fc1 sc0 ls0 ws24">place, a scar<span class="_ _2"></span>city factor is cr<span class="_ _2"></span>eated as </div><div class="t m0 x5 h3 y2b ff2 fs1 fc1 sc0 ls0 ws0">tokens bur<span class="_ _6"></span>n.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><img class="bi x2 y2 w1 h2" alt="" src="bg3.png"/><div class="t m0 x3 h1 y3 ff1 fs0 fc1 sc0 ls0 ws0">V<span class="_ _5"></span>ALUES</div><div class="t m0 x3 h3 y4 ff2 fs1 fc1 sc0 ls0 ws25">Our goal as a token will always be </div><div class="t m0 x3 h3 y5 ff2 fs1 fc1 sc0 ls0 ws26">about the community<span class="_ _3"></span>, because that’<span class="_ _3"></span>s </div><div class="t m0 x3 h3 y6 ff2 fs1 fc1 sc0 ls0 ws27">how we started: by coming together </div><div class="t m0 x3 h3 y7 ff2 fs1 fc1 sc0 ls0 ws0">and cr<span class="_ _2"></span>eating a token for the people. </div><div class="t m0 x3 h4 y2c ff1 fs2 fc2 sc0 ls0 ws28">Unknowingly<span class="_ _5"></span>, we have become </div><div class="t m0 x3 h4 y2d ff1 fs2 fc2 sc0 ls0 ws29">a place of solace for those that </div><div class="t m0 x3 h4 yb ff1 fs2 fc2 sc0 ls0 ws2a">have been scammed or rugged </div><div class="t m0 x3 h4 y2e ff1 fs2 fc2 sc0 ls0 ws2b">in the past. Most crypto coins </div><div class="t m0 x3 h4 y2f ff1 fs2 fc2 sc0 ls0 ws2c">can make you money<span class="_ _5"></span>, but only </div><div class="t m0 x3 h4 y30 ff1 fs2 fc2 sc0 ls0 ws2d">SafeSatoshiMoon will make </div><div class="t m0 x3 h4 y31 ff1 fs2 fc2 sc0 ls0 ws2e">you stay for the common bond </div><div class="t m0 x3 h4 y32 ff1 fs2 fc2 sc0 ls0 ws0">we all shar<span class="_ _2"></span>e. </div><div class="t m0 x3 h3 y33 ff2 fs1 fc1 sc0 ls0 ws2f">The community will be engaged in </div><div class="t m0 x3 h3 y34 ff2 fs1 fc1 sc0 ls0 ws30">parts of the pr<span class="_ _2"></span>ocess as we continue </div><div class="t m0 x3 h3 y35 ff2 fs1 fc1 sc0 ls0 ws31">to pr<span class="_ _2"></span>ogr<span class="_ _2"></span>ess as a new token.  Input and </div><div class="t m0 x3 h3 y36 ff2 fs1 fc1 sc0 ls0 ws32">suggestions will always be helpful </div><div class="t m0 x3 h3 y37 ff2 fs1 fc1 sc0 ls0 ws33">and we look forwar<span class="_ _2"></span>d to gr<span class="_ _2"></span>owing </div><div class="t m0 x3 h3 y38 ff2 fs1 fc1 sc0 ls0 ws0">collectively with the community<span class="_ _3"></span>.</div><div class="t m0 x4 h4 y18 ff1 fs2 fc1 sc0 ls0 ws0">3</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf4" class="pf w0 h0" data-page-no="4"><div class="pc pc4 w0 h0"><img class="bi x2 y2 w1 h2" alt="" src="bg4.png"/><div class="t m0 x3 h1 y3 ff1 fs0 fc1 sc0 ls0 ws0">USE CASES</div><div class="t m0 x3 h3 y4 ff2 fs1 fc1 sc0 ls0 ws34">The use cases for SafeSatoshiMoon </div><div class="t m0 x3 h3 y5 ff2 fs1 fc1 sc0 ls0 ws0">can be described as follows:</div><div class="t m0 x3 h4 y39 ff1 fs2 fc1 sc0 ls0 ws0">1. Charity</div><div class="t m0 x3 h3 y3a ff4 fs1 fc1 sc0 ls0 ws0">a.<span class="ff2 ws35"> The SSM team will make an initial </span></div><div class="t m0 x3 h3 y3b ff2 fs1 fc1 sc0 ls0 ws36">donation to the charity wallet.  As time </div><div class="t m0 x3 h3 y3c ff2 fs1 fc1 sc0 ls0 ws37">pr<span class="_ _2"></span>ogr<span class="_ _2"></span>esses, the wallet will r<span class="_ _2"></span>eceive </div><div class="t m0 x3 h3 y3d ff2 fs1 fc1 sc0 ls0 ws38">bur<span class="_ _6"></span>ned tokens.  Community members </div><div class="t m0 x3 h3 y3e ff2 fs1 fc1 sc0 ls0 ws39">will also be allowed to donate to the </div><div class="t m0 x3 h3 y3f ff2 fs1 fc1 sc0 ls0 ws0">charity wallet. </div><div class="t m0 x3 h3 y40 ff4 fs1 fc1 sc0 ls0 ws0">b.<span class="ff2 ws26"> Extra tokens that ar<span class="_ _2"></span>e collected will </span></div><div class="t m0 x3 h3 y41 ff2 fs1 fc1 sc0 ls0 ws3a">be used for charitable donations that </div><div class="t m0 x3 h3 y42 ff2 fs1 fc1 sc0 ls0 ws3b">will be voted on by the community </div><div class="t m0 x3 h3 y43 ff2 fs1 fc1 sc0 ls0 ws3c">of holders that ar<span class="_ _2"></span>e engaged with our </div><div class="t m0 x3 h3 y44 ff2 fs1 fc1 sc0 ls0 ws0">social media platforms.</div><div class="t m0 x3 h3 y45 ff4 fs1 fc1 sc0 ls0 ws0">c.<span class="ff2 ws3d"> These donations will be announced </span></div><div class="t m0 x3 h3 y46 ff2 fs1 fc1 sc0 ls0 ws4">via social media and pr<span class="_ _2"></span>esented to the </div><div class="t m0 x3 h3 y47 ff2 fs1 fc1 sc0 ls0 ws3e">charitable cause via the blockchain. </div><div class="t m0 x3 h3 y48 ff2 fs1 fc1 sc0 ls0 ws3f">The transactions on the block chain </div><div class="t m0 x3 h3 y49 ff2 fs1 fc1 sc0 ls0 ws40">(Smart Contract) will be available </div><div class="t m0 x3 h3 y4a ff2 fs1 fc1 sc0 ls0 ws0">publicly for investors.</div><div class="t m0 x4 h4 y18 ff1 fs2 fc1 sc0 ls0 ws0">4</div><div class="t m0 x5 h4 y4b ff1 fs2 fc1 sc0 ls0 ws41">2. NFT Exchange (Non-Fungible </div><div class="t m0 x5 h4 y4c ff1 fs2 fc1 sc0 ls0 ws0">T<span class="_ _0"></span>oken)</div><div class="t m0 x5 h3 y4d ff4 fs1 fc1 sc0 ls0 ws0">a.<span class="ff2 ws42"> “Accor<span class="_ _2"></span>ding to Binance Academy<span class="_ _3"></span>, </span></div><div class="t m0 x5 h3 y4e ff2 fs1 fc1 sc0 ls0 ws43">an NFT is a type of cryptographic </div><div class="t m0 x5 h3 y4f ff2 fs1 fc1 sc0 ls0 ws44">token on a blockchain that r<span class="_ _2"></span>epr<span class="_ _2"></span>esents </div><div class="t m0 x5 h3 y50 ff2 fs1 fc1 sc0 ls0 ws45">a unique asset”. For example, if </div><div class="t m0 x5 h3 y51 ff2 fs1 fc1 sc0 ls0 ws46">you trade one Bitcoin, the r<span class="_ _2"></span>eceiver </div><div class="t m0 x5 h3 y52 ff2 fs1 fc1 sc0 ls0 ws47">will r<span class="_ _2"></span>eceive one Bitcoin of the same </div><div class="t m0 x5 h3 y53 ff2 fs1 fc1 sc0 ls0 ws48">value.  With an NFT<span class="_ _4"></span>, “each token </div><div class="t m0 x5 h6 y54 ff5 fs1 fc1 sc0 ls0 ws0">has  a <span class="_ _7"> </span>unique  identier <span class="_ _7"> </span>that  makes </div><div class="t m0 x5 h6 y55 ff5 fs1 fc1 sc0 ls0 ws0">it <span class="_ _8"> </span>dier<span class="_ _2"></span>ent <span class="_ _8"> </span>fr<span class="_ _2"></span>om <span class="_ _8"> </span>other <span class="_ _8"> </span>units, <span class="_ _8"> </span>making </div><div class="t m0 x5 h3 y56 ff2 fs1 fc1 sc0 ls0 ws49">it useful for assets such as pr<span class="_ _2"></span>oof of </div><div class="t m0 x5 h3 y57 ff2 fs1 fc1 sc0 ls0 ws4a">authenticity and ownership within the </div><div class="t m0 x5 h3 y58 ff2 fs1 fc1 sc0 ls0 ws4b">digital r<span class="_ _2"></span>ealm.” When this is applied, </div><div class="t m0 x5 h3 y59 ff2 fs1 fc1 sc0 ls0 ws4c">artists, for example, ar<span class="_ _2"></span>e able to cr<span class="_ _2"></span>eate </div><div class="t m0 x5 h3 y5a ff2 fs1 fc1 sc0 ls0 ws4d">and sell their own work over the NFT </div><div class="t m0 x5 h3 y5b ff2 fs1 fc1 sc0 ls0 ws0">Exchange.</div><div class="t m0 x5 h3 y5c ff4 fs1 fc1 sc0 ls0 ws0">b.<span class="ff2 ws4e"> Ther<span class="_ _2"></span>e ar<span class="_ _2"></span>e two ways to interact </span></div><div class="t m0 x5 h3 y5d ff2 fs1 fc1 sc0 ls0 ws4f">with an NFT exchange, over Binance </div><div class="t m0 x5 h3 y5e ff2 fs1 fc1 sc0 ls0 ws50">Chain and T<span class="_ _5"></span>rust W<span class="_ _9"></span>allet.  W<span class="_ _1"></span>e intend </div><div class="t m0 x5 h3 y5f ff2 fs1 fc1 sc0 ls0 ws35">to leverage this option as we pursue </div><div class="t m0 x5 h3 y60 ff2 fs1 fc1 sc0 ls0 ws26">our own NFT exchange and sour<span class="_ _2"></span>ce a </div><div class="t m0 x5 h3 y61 ff2 fs1 fc1 sc0 ls0 ws0">r<span class="_ _2"></span>eputable developer for the pr<span class="_ _2"></span>oject.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf5" class="pf w0 h0" data-page-no="5"><div class="pc pc5 w0 h0"><img class="bi x3 y62 w2 h7" alt="" src="bg5.png"/><div class="t m0 x3 h1 y3 ff1 fs0 fc1 sc0 ls0 ws0">ROADMAP</div><div class="t m0 x6 h4 y63 ff1 fs2 fc1 sc0 ls0 ws0">Q2 2021</div><div class="t m0 x3 h3 y64 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Start community by opening </span></div><div class="t m0 x7 h6 y65 ff5 fs1 fc1 sc0 ls0 ws0">up several social media ows </div><div class="t m0 x7 h3 y66 ff2 fs1 fc1 sc0 ls0 ws0">including, but not limited to, </div><div class="t m0 x7 h3 y67 ff2 fs1 fc1 sc0 ls0 ws0">Discor<span class="_ _2"></span>d, T<span class="_ _4"></span>elegram, T<span class="_ _4"></span>witter<span class="_ _5"></span>, Reddit, </div><div class="t m0 x7 h3 y68 ff2 fs1 fc1 sc0 ls0 ws0">and Instagram.</div><div class="t m0 x3 h3 y69 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Cr<span class="_ _2"></span>eate brand, logo, website and </span></div><div class="t m0 x7 h3 y6a ff2 fs1 fc1 sc0 ls0 ws0">advertisements thr<span class="_ _2"></span>ough social </div><div class="t m0 x7 h3 y6b ff2 fs1 fc1 sc0 ls0 ws0">media and Y<span class="_ _4"></span>outube r<span class="_ _2"></span>eviews.</div><div class="t m0 x3 h3 y6c ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Apply for CoinGecko, </span></div><div class="t m0 x7 h3 y6d ff2 fs1 fc1 sc0 ls0 ws0">CoinMarketCap, BSCscan.com, </div><div class="t m0 x7 h3 y6e ff2 fs1 fc1 sc0 ls0 ws0">and T<span class="_ _5"></span>rust W<span class="_ _9"></span>allet.</div><div class="t m0 x3 h3 y6f ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Initial push to or<span class="_ _9"></span>ganize the </span></div><div class="t m0 x7 h6 y70 ff5 fs1 fc1 sc0 ls0 ws0">charitable donation workow<span class="_ _1"></span>.</div><div class="t m0 x3 h3 y71 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Contract audited by a thir<span class="_ _2"></span>d party<span class="_ _3"></span>.</span></div><div class="t m0 x6 h4 y72 ff1 fs2 fc1 sc0 ls0 ws0">Q3 2021</div><div class="t m0 x3 h3 y73 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Apply for WhiteBit and BitMart </span></div><div class="t m0 x7 h3 y74 ff2 fs1 fc1 sc0 ls0 ws0">exchanges to gr<span class="_ _2"></span>ow our </div><div class="t m0 x7 h3 y75 ff2 fs1 fc1 sc0 ls0 ws0">community r<span class="_ _2"></span>each.</div><div class="t m0 x3 h3 y76 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Community submission and </span></div><div class="t m0 x7 h3 y77 ff2 fs1 fc1 sc0 ls0 ws0">voting on charities we will donate </div><div class="t m0 x7 h6 y78 ff5 fs1 fc1 sc0 ls0 ws0">to, followed by making our rst </div><div class="t m0 x7 h3 y79 ff2 fs1 fc1 sc0 ls0 ws0">donation.</div><div class="t m0 x4 h4 y18 ff1 fs2 fc1 sc0 ls0 ws0">5</div><div class="t m0 x5 h3 y7a ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Gain a lar<span class="_ _9"></span>ge following on social </span></div><div class="t m0 x8 h3 y7b ff2 fs1 fc1 sc0 ls0 ws0">media platforms to become one </div><div class="t m0 x8 h6 y7c ff5 fs1 fc1 sc0 ls0 ws0">of the top communities in the De </div><div class="t m0 x8 h3 y7d ff2 fs1 fc1 sc0 ls0 ws0">T<span class="_ _4"></span>oken space.</div><div class="t m0 x5 h3 y7e ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Initial push to cr<span class="_ _2"></span>eate community </span></div><div class="t m0 x8 h3 y7f ff2 fs1 fc1 sc0 ls0 ws0">mer<span class="_ _2"></span>chandise</div><div class="t m0 x9 h4 y80 ff1 fs2 fc1 sc0 ls0 ws0">Q4 2021</div><div class="t m0 x5 h3 y81 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Sour<span class="_ _2"></span>ce r<span class="_ _2"></span>eputable developer for </span></div><div class="t m0 x8 h3 y82 ff2 fs1 fc1 sc0 ls0 ws0">NFT marketplace.</div><div class="t m0 x5 h3 y83 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Cr<span class="_ _2"></span>eate a valid smart contract for </span></div><div class="t m0 x8 h3 y84 ff2 fs1 fc1 sc0 ls0 ws0">our marketplace.</div><div class="t m0 x5 h3 y85 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Have NFT listed as an exchange </span></div><div class="t m0 x8 h3 y86 ff2 fs1 fc1 sc0 ls0 ws0">on the Binance Smart Chain.</div><div class="t m0 x5 h3 y87 ff5 fs1 fc1 sc0 ls0 ws0">• <span class="_ _a"> </span><span class="ff2">Continue to look towar<span class="_ _2"></span>ds other </span></div><div class="t m0 x8 h3 y88 ff2 fs1 fc1 sc0 ls0 ws0">exchanges including but not </div><div class="t m0 x8 h3 y89 ff2 fs1 fc1 sc0 ls0 ws0">limited to Binance and Coinbase.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf6" class="pf w0 h0" data-page-no="6"><div class="pc pc6 w0 h0"><img class="bi x2 y2 w1 h2" alt="" src="bg6.png"/><div class="t m0 x3 h3 y8a ff4 fs1 fc1 sc0 ls0 ws0">Disclaimer:<span class="ff2 ws51"> Investing in the value </span></div><div class="t m0 x3 h3 y8b ff2 fs1 fc1 sc0 ls0 ws52">of any one cryptocurr<span class="_ _2"></span>ency involves </div><div class="t m0 x3 h3 y8c ff2 fs1 fc1 sc0 ls0 ws53">risk due to several factors. These </div><div class="t m0 x3 h3 y8d ff2 fs1 fc1 sc0 ls0 ws54">risks should be understood by the </div><div class="t m0 x3 h3 y8e ff2 fs1 fc1 sc0 ls0 ws55">investor<span class="_ _5"></span>. The information pr<span class="_ _2"></span>ovided </div><div class="t m0 x3 h3 y8f ff2 fs1 fc1 sc0 ls0 ws56">on this website does not constitute </div><div class="t m0 x3 h3 y90 ff2 fs1 fc1 sc0 ls0 ws57">investment advice or investment </div><div class="t m0 x3 h3 y91 ff2 fs1 fc1 sc0 ls0 ws58">r<span class="_ _2"></span>ecommendations nor does it </div><div class="t m0 x3 h6 y92 ff5 fs1 fc1 sc0 ls0 ws0">constitute <span class="_ _b"></span>an <span class="_ _b"></span>oer <span class="_ _b"></span>to <span class="_ _b"></span>buy <span class="_ _b"></span>or <span class="_ _b"></span>sell <span class="_ _b"></span>or <span class="_ _b"></span>a </div><div class="t m0 x3 h6 y93 ff5 fs1 fc1 sc0 ls0 ws0">solicitation <span class="_ _c"> </span>of <span class="_ _c"> </span>an <span class="_ _c"> </span>oer <span class="_ _c"> </span>to <span class="_ _c"> </span>buy <span class="_ _c"> </span>or <span class="_ _c"> </span>sell </div><div class="t m0 x3 h3 y94 ff2 fs1 fc1 sc0 ls0 ws59">any cryptocurr<span class="_ _2"></span>ency<span class="_ _3"></span>. This information </div><div class="t m0 x3 h3 y95 ff2 fs1 fc1 sc0 ls0 ws5a">should not be used as a substitute for </div><div class="t m0 x3 h3 y96 ff2 fs1 fc1 sc0 ls0 ws49">suitable investment. Please conduct </div><div class="t m0 x3 h3 y97 ff2 fs1 fc1 sc0 ls0 ws5b">your own due diligence and consult </div><div class="t m0 x3 h6 y98 ff5 fs1 fc1 sc0 ls0 ws0">your nancial advisor <span class="_ _2"></span>or independent </div><div class="t m0 x3 h3 y99 ff2 fs1 fc1 sc0 ls0 ws5c">pr<span class="_ _2"></span>ofessional advisor befor<span class="_ _2"></span>e making </div><div class="t m0 x3 h3 y9a ff2 fs1 fc1 sc0 ls0 ws0">any investment decisions.</div><div class="t m0 x4 h4 y18 ff1 fs2 fc1 sc0 ls0 ws0">6</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+
+</div>
+</body>
+</html>
