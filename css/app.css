@@ -118,6 +118,20 @@
 
 /* DEFAULT THEME */
 
+.box_2{
+background-image: linear-gradient(to right, rgb(33, 176, 204),rgb(31, 192, 138));
+
+max-width: max-content;
+border-radius: 5px;
+
+}
+
+.text2{
+  text-decoration-color: white;
+  text-emphasis-color: white;
+  color: white;
+}
+
 .cm-s-default .cm-header {color: blue;}
 .cm-s-default .cm-quote {color: #090;}
 .cm-negative {color: #d44;}
