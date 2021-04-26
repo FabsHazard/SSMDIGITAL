@@ -119,17 +119,24 @@
 /* DEFAULT THEME */
 
 .box_2{
-background-image: linear-gradient(to right, rgb(33, 176, 204),rgb(31, 192, 138));
+background-image: linear-gradient(to right, rgb(48,207,249),rgb(4,252,161));
 
-max-width: max-content;
+max-width:fit-content
 border-radius: 5px;
-
+text-align: center;
+margin-left: auto;
+margin-right: auto;
 }
 
 .text2{
+  
   text-decoration-color: white;
   text-emphasis-color: white;
   color: white;
+  /*font-family:Arial, Helvetica, sans-serif;*/
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 78%;
+  font-weight: 550;
 }
 
 .cm-s-default .cm-header {color: blue;}
